@@ -3,19 +3,18 @@ phases:
   install:
     runtime-version:
       docker: 19
-    pre_build:
-      commands:
-        - echo Build Backend docker images for testing...
+  pre_build:
+    commands:
+      - echo Build Backend docker images for testing...
         #- docker build -t spbryan/strapi-test ./backend
         #- docker build -t spbryan/nginx-proxy ./nginx
-    build:
-      commands:
-        - echo Build started on `date`
-        # Run test with build docker images
-        - docker build -t spbryan/strapi-test ./backend
-        - docker build -t spbryan/nginx-proxy ./nginx
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    post_build:
-
-        - docker push spbryan/strapi-test
-        - docker push spbryan/nginx-proxy
+  build:
+    commands:
+      - echo Build started on `date`
+      # Run test with build docker images
+      - docker build -t spbryan/strapi-test ./backend
+      - docker build -t spbryan/nginx-proxy ./nginx
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  post_build:
+      - docker push spbryan/strapi-test
+      - docker push spbryan/nginx-proxy
