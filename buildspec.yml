@@ -15,4 +15,4 @@ phases:
         - echo Run tests...
     post_build:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-        - docker push spbryan/deploy-test
+        - docker push spbryan/strapi-test-aws

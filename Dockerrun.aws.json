@@ -17,7 +17,7 @@
     },
     {
       "name": "backend",
-      "image": "spbryan/strapi-test",
+      "image": "spbryan/strapi-test-aws",
       "hostname": "backend",
       "essential": false,
       "memory": 300
