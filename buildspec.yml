@@ -6,13 +6,16 @@ phases:
     pre_build:
       commands:
         - echo Build Backend docker images for testing...
-        - docker build -t spbryan/strapi-test ./backend
-        - docker build -t spbryan/nginx-proxy ./nginx
+        #- docker build -t spbryan/strapi-test ./backend
+        #- docker build -t spbryan/nginx-proxy ./nginx
     build:
       commands:
         - echo Build started on `date`
         # Run test with build docker images
-        - echo Run tests...
-    post_build:
+        - docker build -t spbryan/strapi-test ./backend
+        - docker build -t spbryan/nginx-proxy ./nginx
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-        - docker push spbryan/strapi-test-aws
+    post_build:
+
+        - docker push spbryan/strapi-test
+        - docker push spbryan/nginx-proxy
