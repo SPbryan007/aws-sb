@@ -16,5 +16,6 @@ phases:
       - docker build -t spbryan/nginx-proxy ./nginx
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   post_build:
+    commands:
       - docker push spbryan/strapi-test
       - docker push spbryan/nginx-proxy
