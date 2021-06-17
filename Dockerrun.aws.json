@@ -1,0 +1,26 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "nginx",
+      "image": "spbryan/nginx-proxy",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["backend"],
+      "memory": 100
+    },
+    {
+      "name": "backend",
+      "image": "spbryan/strapi-test",
+      "hostname": "backend",
+      "essential": false,
+      "memory": 300
+    }
+  ]
+}

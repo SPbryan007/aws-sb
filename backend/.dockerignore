@@ -1,0 +1,10 @@
+.editorconfig
+.env.example
+/build
+/node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+package-lock.json
