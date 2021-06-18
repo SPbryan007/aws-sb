@@ -2,9 +2,9 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "nginx-proxy",
+      "name": "nginx-proxy-test",
       "image": "spbryan/nginx-proxy",
-      "hostname": "nginx-proxy",
+      "hostname": "nginx-proxy-test",
       "essential": true,
       "portMappings": [
         {
