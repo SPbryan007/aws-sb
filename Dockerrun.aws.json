@@ -12,7 +12,16 @@
           "containerPort": 80
         }
       ],
+      "links": ["backend"],
       "memory": 128
+    },
+    
+    {
+      "name": "backend",
+      "image": "spbryan/strapi-test",
+      "hostname": "backend",
+      "essential": false,
+      "memory": 300
     }
   ]
 }
