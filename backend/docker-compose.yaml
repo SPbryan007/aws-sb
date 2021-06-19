@@ -4,5 +4,6 @@ services:
     image: strapi-app3
     volumes:
       - .:/usr/src/app
+      - ./node_modules
     ports:
       - '1337:1337'
